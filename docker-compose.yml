@@ -1,0 +1,7 @@
+services:
+  arlebnispfade:
+    container_name: arlebnispfade
+    build:
+      context: .
+      args:
+        - AUTH_TOKEN=<your ngrok token here>
