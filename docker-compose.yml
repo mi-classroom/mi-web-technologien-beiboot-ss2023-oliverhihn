@@ -4,4 +4,4 @@ services:
     build:
       context: .
       args:
-        - AUTH_TOKEN=<your ngrok token here>
+        - AUTH_TOKEN=2PWUNrExG9aAFRlQZuL5Eqs7kd6_4pe81R4Bf7pLBfab7c7Qk

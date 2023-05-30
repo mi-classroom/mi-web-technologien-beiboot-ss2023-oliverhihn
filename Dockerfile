@@ -2,11 +2,11 @@ FROM node:20-alpine
 
 # RUN apk add --no-cache bash
 
-WORKDIR /site
-ADD ./ /site
-
 RUN npm install --global http-server
 RUN npm install --global ngrok
+
+WORKDIR /site
+ADD ./ /site
 
 ARG AUTH_TOKEN
 ENV AUTH_TOKEN=${AUTH_TOKEN}
