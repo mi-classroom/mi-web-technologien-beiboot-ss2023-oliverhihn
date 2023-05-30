@@ -1,54 +1,102 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<!doctype HTML>
+<html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script>
+<body style="margin: 0px; overflow: hidden;">
 
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+<script>
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
+let markerVisible = { "redMarker": false, "yellowMarker": false, "blueMarker": false };
 
-<body style="margin: 0px; overflow: hidden">
-  <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true; precision: medium;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
-    <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-    <a-nft
-      type="nft"
-      url="webserver/image_tracking/nft/trex/trex-image/trex"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <a-entity
-        gltf-model="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        scale="5 5 5"
-        position="150 300 -100"
-      >
-      </a-entity>
-    </a-nft>
+AFRAME.registerComponent('registerevents', {
+    init: function ()
+    {
+        let marker = this.el;
+
+        marker.addEventListener('markerFound', function() {
+            markerVisible[ marker.id ] = true;
+            // console.log( markerVisible );
+        });
+
+        marker.addEventListener('markerLost', function() {
+            markerVisible[ marker.id ] = false;
+            // console.log( markerVisible );
+        });
+    }
+});
+
+AFRAME.registerComponent('loop',
+{
+    init: function()
+    {
+        this.box = document.querySelector("#theBox");
+    },
+
+    tick: function (time, deltaTime)
+    {
+        // for convenience
+        let mv = markerVisible, r = "redMarker", y = "yellowMarker", b = "blueMarker";
+
+        if ( mv[r] && mv[y] && mv[b] )
+            this.box.setAttribute("color", "#654321");
+        else if ( mv[r] && mv[y] && !mv[b] )
+            this.box.setAttribute("color", "#FF8800");
+        else if ( mv[r] && !mv[y] && mv[b] )
+            this.box.setAttribute("color", "purple");
+        else if ( mv[r] && !mv[y] && !mv[b] )
+            this.box.setAttribute("color", "red");
+        else if ( !mv[r] && mv[y] && mv[b] )
+            this.box.setAttribute("color", "green");
+        else if ( !mv[r] && mv[y] && !mv[b] )
+            this.box.setAttribute("color", "yellow");
+        else if ( !mv[r] && !mv[y] && mv[b] )
+            this.box.setAttribute("color", "blue");
+        else // if ( !mv[r] && !mv[y] && !mv[b] )
+            this.box.setAttribute("color", "gray");
+    }
+});
+
+</script>
+
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+    <a-assets>
+		<img id="grid" src="images/border.png" />
+	</a-assets>
+
+    <a-marker type="pattern" url="data/kanji.patt" id="baseMarker">
+        <a-box id="theBox"
+               position="0 0.5 0"
+               color = "white"
+               material="src:#grid; transparent: true; opacity: 0.90;">
+        </a-box>
+    </a-marker>
+
+    <a-marker type="barcode" value="0" id="redMarker" registerevents>
+        <a-plane position="0 0 0"
+                 rotation="-90 0 0"
+               material="color: red">
+        </a-plane>
+    </a-marker>
+
+    <a-marker type="barcode" value="1" id="yellowMarker" registerevents>
+        <a-plane position="0 0 0"
+                 rotation="-90 0 0"
+               material="color: yellow">
+        </a-plane>
+    </a-marker>
+
+    <a-marker type="barcode" value="2" id="blueMarker" registerevents>
+        <a-plane position="0 0 0"
+                 rotation="-90 0 0"
+               material="color: blue">
+        </a-plane>
+    </a-marker>
+
     <a-entity camera></a-entity>
-  </a-scene>
+    <a-entity loop></a-entity>
+
+</a-scene>
 </body>
+</html>
