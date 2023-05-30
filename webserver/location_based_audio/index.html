@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>location_based_sound</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          onGeoLocSuccess,
+          onGeoLocError
+        );
+      }
+
+      function onGeoLocSuccess(position) {
+        var entity = document.querySelector("a-entity");
+        entity.setAttribute(
+          "gps-new-entity-place",
+          `latitude: ${position.coords.latitude}); longitude: ${position.coords.longitude}`
+        );
+        console.log(entity.getDOMAttribute("gps-new-entity-place"));
+      }
+
+      function onGeoLocError(e) {
+        console.log(e);
+      }
+
+      AFRAME.registerComponent("soundhandler", {
+        tick: function () {
+          var entity = document.querySelector("[sound]");
+          if (document.querySelector("a-entity").object3D.visible == true) {
+            entity.components.sound.playSound();
+          } else {
+            entity.components.sound.pauseSound();
+          }
+        },
+      });
+    </script>
+
+    <a-scene
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+      renderer="antialias: true; alpha: true"
+    >
+      <a-camera
+        gps-new-camera="gpsMinDistance: 5; gpsTimeInterval: 0"
+      ></a-camera>
+      <a-entity
+        material="color: red"
+        geometry="primitive: box"
+        scale="1 1 1"
+        sound="src: url(sound.mp3)"
+        soundhandler
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
