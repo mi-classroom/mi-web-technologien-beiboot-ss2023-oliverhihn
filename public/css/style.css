@@ -1,0 +1,197 @@
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 173
+Content-Type: application/octet-stream
+X-File-MD5: cc4ac597c4d9b0fc1a84e91984d01a96
+X-File-Mtime: 1694410500
+X-File-Path: /immersive-ar-app/tailwind.config.js
+
+module.exports = {
+  purge: ['./**/*.html'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 422
+Content-Type: application/octet-stream
+X-File-MD5: 787521fc338149de490cd9eab0f4b5ae
+X-File-Mtime: 1694410912
+X-File-Path: /immersive-ar-app/Dockerfile
+
+FROM node:20-alpine
+
+# RUN apk add --no-cache bash
+
+RUN npm install --global webpack-cli webpack ngrok
+
+WORKDIR /site
+ADD ./ /site
+
+ARG AUTH_TOKEN
+ENV AUTH_TOKEN=${AUTH_TOKEN}
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+RUN ngrok config add-authtoken ${AUTH_TOKEN}
+
+RUN mkdir /scripts
+RUN echo 'npm run dev &' >> /scripts/init.sh
+RUN echo 'ngrok http 8000 --log stdout' >> /scripts/init.sh
+CMD sh -c "sh /scripts/init.sh"
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 208
+Content-Type: application/octet-stream
+X-File-MD5: 15394c965f9b867a64425ab4a18db986
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/chevronLeftOutline.svg
+
+<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 15L1 8L8 1" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 500
+Content-Type: application/octet-stream
+X-File-MD5: 1240878555fc1246f8516403801ef1eb
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/chevronLeft.svg
+
+<svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.51934 0.380761C8.02702 0.888443 8.02702 1.71156 7.51934 2.21924L3.23857 6.5L7.51934 10.7808C8.02702 11.2884 8.02702 12.1116 7.51934 12.6192C7.01165 13.1269 6.18854 13.1269 5.68086 12.6192L0.480859 7.41924C-0.0268227 6.91156 -0.0268227 6.08844 0.480859 5.58076L5.68086 0.380761C6.18854 -0.12692 7.01165 -0.12692 7.51934 0.380761Z" fill="#111827"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 219
+Content-Type: application/octet-stream
+X-File-MD5: c3cf0bf97b56113025e6dcff0c4f329e
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/chevronRight.svg
+
+<svg width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999999 1.5L8 8.5L1 15.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 223
+Content-Type: application/octet-stream
+X-File-MD5: e78c7fa7daa1f2034cf4bedfdf02e102
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/check.svg
+
+<svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.5 7.5L5.5 11.5L15.5 1.5" stroke="#F0EAEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 215
+Content-Type: application/octet-stream
+X-File-MD5: 7807c4aa2fcdea1cea8a4c83797255e2
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/chevronRightOutline.svg
+
+<svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.999999 1L8 8L1 15" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 250
+Content-Type: application/octet-stream
+X-File-MD5: f2475612eee049996d7206714acfd8ea
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/catalogue.svg
+
+<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1H14M1 5H10M1 9H10M15 5V17M15 17L11 13M15 17L19 13" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 536
+Content-Type: application/octet-stream
+X-File-MD5: 19c36b4e064688c0f37e1d0b0aa6fa05
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/rotateLeft.svg
+
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.00035 13.0002L5.3518 15.8124L5.63302 15.4773L8.16408 12.4609" stroke="#2D4257" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5.6783 15.4228C4.38064 12.9783 4.61105 9.88839 6.49943 7.6379C8.98452 4.67629 13.3999 4.28992 16.3614 6.77493C19.3229 9.25995 19.7091 13.6753 17.2241 16.6369C14.9294 19.3715 10.9891 19.9105 8.06719 18.0208" stroke="#2D4257" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 558
+Content-Type: application/octet-stream
+X-File-MD5: d7b94cd4d75cea6b1868baa05737a736
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/trash.svg
+
+<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.7425 4.33957L13.969 15.1683C13.9024 16.1017 13.1257 16.8248 12.19 16.8248H4.80984C3.87409 16.8248 3.09743 16.1017 3.03076 15.1683L2.25728 4.33957M6.7163 7.90678V13.2576M10.2835 7.90678V13.2576M11.1753 4.33957V1.66416C11.1753 1.17163 10.776 0.772354 10.2835 0.772354H6.7163C6.22377 0.772354 5.8245 1.17163 5.8245 1.66416V4.33957M1.36548 4.33957H15.6343" stroke="#F0EAEA" stroke-width="1.17034" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 171
+Content-Type: application/octet-stream
+X-File-MD5: dc300130fe560a5d8748fbcc6386130c
+X-File-Mtime: 1694409375
+X-File-Path: /immersive-ar-app/docker-compose.yml
+
+services:
+  arlebnispfade:
+    container_name: arlebnispfade
+    build:
+      context: .
+      args:
+        - AUTH_TOKEN=2QVfwqQCRCRuSjcxU5KllSS413e_utzrc6ujKUZoDUNSaw1c
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 91
+Content-Type: application/octet-stream
+X-File-MD5: d5e2612599d645a15fc3d23773ab0d88
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/postcss.config.js
+
+const tailwindcss = require('tailwindcss');
+module.exports = {
+  plugins: [tailwindcss],
+};
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 245
+Content-Type: application/octet-stream
+X-File-MD5: b6cb0dfc62d7815e0b5960abc679655e
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/tick.svg
+
+<svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.41675 5.08334L3.75008 7.41668L9.58342 1.58334" stroke="#2D4257" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 531
+Content-Type: application/octet-stream
+X-File-MD5: 54c2e930cd523a2aab55d9b3f8a91c92
+X-File-Mtime: 1694410499
+X-File-Path: /immersive-ar-app/public/assets/icons/rotateRight.svg
+
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 11.0001L19.1878 14.3515L18.8526 14.0703L15.8363 11.5393" stroke="#2D4257" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.7986 14.0245C19.6521 11.3918 18.8886 8.38892 16.6382 6.5006C13.6767 4.01559 9.26142 4.40187 6.77641 7.3634C4.2914 10.3249 4.67769 14.7402 7.63921 17.2252C10.3737 19.5198 14.3477 19.3663 16.8971 16.9979" stroke="#2D4257" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+--boundary_.oOo._eJpMOVePaON9OKsdSGT/+jD7M0YEi90E
+Content-Length: 351
+Content-Type: application/octet-stream
+X-File-MD5: 877165224c839d7411422f68e670c5be
+X-File-Mtime: 1694772761
+X-File-Path: /immersive-ar-app/public/index.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=
