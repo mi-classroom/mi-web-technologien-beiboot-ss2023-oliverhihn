@@ -5,7 +5,8 @@
         <h1><b>AR</b>lebnispfade</h1>
         <h2>Oberbergischer Kreis</h2>
       </div>
-      <video-background src="assets/intro-video.mp4" style="height: 100vh; margin-top: 1rem; padding-top: 2rem;">
+      <video-background src="assets/intro-video.mp4" :muted="false"
+        style="height: 100vh; margin-top: 1rem; padding-top: 2rem;">
         <div class="title_text">
           <h1><b>AR</b>lebnispfade</h1>
           <h2>Oberbergischer Kreis</h2>
