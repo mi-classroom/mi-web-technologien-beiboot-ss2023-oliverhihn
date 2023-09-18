@@ -231,10 +231,12 @@ a {
 
 .title_text h1 {
   font-weight: 600;
+  font-size: 200%;
 }
 
 .title_text h2 {
   font-weight: 100;
+  font-size: 200%;
 }
 
 .title_text b {
@@ -242,7 +244,7 @@ a {
 }
 
 #background-video {
-  margin-top: 2rem;
+  padding-top: 4rem;
   width: 100vw;
 }
 
