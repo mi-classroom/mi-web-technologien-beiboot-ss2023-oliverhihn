@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "./components/Home.vue";
 import Home2 from "./components/Home2.vue";
 import Menu from "./components/Menu.vue";
 import SceneHome from "./components/SceneHome.vue";

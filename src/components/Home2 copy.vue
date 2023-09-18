@@ -5,12 +5,9 @@
         <h1><b>AR</b>lebnispfade</h1>
         <h2>Oberbergischer Kreis</h2>
       </div>
-      <video-background src="assets/intro-video.mp4" style="height: 100vh; margin-top: 1rem; padding-top: 2rem;">
-        <div class="title_text">
-          <h1><b>AR</b>lebnispfade</h1>
-          <h2>Oberbergischer Kreis</h2>
-        </div>
-      </video-background>
+      <video id="background-video" autoplay loop>
+        <source src="assets/intro-video.mp4" type="video/mp4">
+      </video>
       <a href="#menu-1" class="continue_bottom">
         <img src="assets/icons/arrow_back.svg">
       </a>
@@ -44,24 +41,33 @@ export default {
   methods: {
     playPauseVideo() {
       let videos = document.querySelectorAll("video");
-      let video = videos.item(0);
-      var isPlaying = true;
-      video.onplaying = function () {
-        isPlaying = true;
-      };
-      video.onpause = function () {
-        isPlaying = false;
-      };
-    },
-    playVid() {
-      if (video.paused && !isPlaying) {
-        return video.play();
-      }
-    },
-    pauseVid() {
-      if (!video.paused && isPlaying) {
-        video.pause();
-      }
+      videos.forEach((video) => {
+        // We can only control playback without insteraction if video is mute
+        video.muted = true;
+        // Play is a promise so we need to check we have it
+        let playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            let observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (
+                        entry.intersectionRatio !== 1 &&
+                        !video.paused
+                    ) {
+                      video.pause();
+                    } else if (video.paused) {
+                      video.play();
+                    }
+                  });
+                },
+                { threshold: 0.2 }
+            );
+            observer.observe(video);
+          });
+        }
+        video.muted = false;
+      });
     }
 
   }
@@ -69,6 +75,7 @@ export default {
 </script>
 
 <style scoped>
+
 #appHome2 {
   scroll-snap-type: y mandatory;
   max-width: 100vw;
@@ -118,9 +125,11 @@ a {
   bottom: 0;
   height: 40vh;
   width: 100vw;
-  background: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 60%,
-      rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 212, 255, 0) 100%
+  );
   display: flex;
   justify-content: center;
 }
