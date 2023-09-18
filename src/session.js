@@ -127,7 +127,6 @@ function onSessionEnded(event) {
 
 function onXRFrame(t, frame) {
   let session = frame.session;
-  console.log("ONFRAME");
   session.requestAnimationFrame(onXRFrame);
 
   if (isCatalogueOpen && placeObjectButtons === true) {

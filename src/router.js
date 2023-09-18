@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./components/Home.vue";
+import Home2 from "./components/Home2.vue";
 import Menu from "./components/Menu.vue";
 import SceneHome from "./components/SceneHome.vue";
 import SceneHome2 from "./components/SceneHome2.vue";
@@ -14,7 +15,7 @@ const router = new VueRouter({
     {
       path: "/",
       name: "Home",
-      component: Home,
+      component: Home2,
     },
     {
       path: "/menu",

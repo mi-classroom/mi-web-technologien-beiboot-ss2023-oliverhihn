@@ -78,7 +78,7 @@ export default {
       this.$emit("close-catalogue");
       shutdownXR();
       shutdownScene();
-      this.$router.push("/menu");
+      window.location.href = "/menu";
     },
   },
 
