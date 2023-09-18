@@ -153,7 +153,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: red;
   font-family: var(--font-family);
   padding: 10px;
 }

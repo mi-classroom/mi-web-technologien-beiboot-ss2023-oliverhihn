@@ -282,8 +282,7 @@ a {
 }
 
 #menu-1 {
-  background: linear-gradient(0deg, rgba(10, 50, 10, 1), rgba(10, 100, 10, 0.5)),
-    url("./assets/aggertalsperre.jpg");
+  background: url("./assets/aggertalsperre.jpg");
   background-size: cover;
 }
 
@@ -292,19 +291,20 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 10px;
   height: 100%;
   width: 100%;
 }
 
 #menu-1 .buttons .button {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   font-family: var(--font-family);
-  padding: 10px;
+  padding: 30px;
+  border-radius: 4px;
 }
 
 #menu-1 .buttons .button b {
