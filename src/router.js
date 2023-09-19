@@ -1,9 +1,9 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home2 from "./components/Home2.vue";
+import Browse from "./components/Browse.vue";
+import Home from "./components/Home.vue";
 import Menu from "./components/Menu.vue";
 import SceneHome from "./components/SceneHome.vue";
-import SceneHome2 from "./components/SceneHome2.vue";
+import Vue from "vue";
+import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
@@ -14,7 +14,7 @@ const router = new VueRouter({
     {
       path: "/",
       name: "Home",
-      component: Home2,
+      component: Home,
     },
     {
       path: "/menu",
@@ -27,9 +27,9 @@ const router = new VueRouter({
       component: SceneHome,
     },
     {
-      path: "/session2",
-      name: "SceneHome2",
-      component: SceneHome2,
+      path: "/browse",
+      name: "Browse",
+      component: Browse,
     },
   ],
 });

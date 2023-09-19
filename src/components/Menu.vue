@@ -3,14 +3,14 @@
     <HeaderComponent title="AR-Erlebnis starten" back-button-link="/" />
     <div class="menuecontent">
       <div class="menumenue">
-        <div class="menuebutton" id="button_nearby" @click="enterToScene">
+        <router-link class="menuebutton" id="button_nearby" :to="'/ar'">
           <img src="assets/icons/radar.svg">
           <h2>ARlebnisse in der Umgebung anzeigen</h2>
-        </div>
-        <router-link class="menuebutton" id="button_startVR" :to="'/ar'">
+        </router-link>
+        <div class="menuebutton" id="button_startVR" @click="enterToScene">
           <img src="assets/icons/ar.svg">
           <h2>AR starten</h2>
-        </router-link>
+        </div>
         <router-link class="menuebutton" id="button_idk" :to="'/help'">
           <img src="assets/icons/help.svg" id="filter-black">
           <h2>Ich hab keine Ahnung</h2>
@@ -33,9 +33,6 @@ export default {
   methods: {
     enterToScene() {
       this.$router.push("/session");
-    },
-    enterToScene2() {
-      this.$router.push("/session2");
     },
   },
 }

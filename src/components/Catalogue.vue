@@ -17,23 +17,13 @@
         <p>3D Modell wählen</p>
       </div>
       <div @click="closeCatalogue" class="flex justify-end">
-        <img
-          src="/assets/icons/closeIcon.svg"
-          alt="Icono de cerrar"
-          class="px-2 py-1"
-        />
+        <img src="/assets/icons/closeIcon.svg" alt="Icono de cerrar" class="px-2 py-1" />
       </div>
     </div>
 
     <div class="grid grid-cols-6 gap-4 px-2">
-      <Model
-        v-for="model in models"
-        :key="model.id"
-        v-bind:model="model"
-        @model-is-loading="modelIsLoading"
-        @model-is-loaded="modelIsLoaded"
-        class="col-span-3"
-      ></Model>
+      <Model v-for="model in models" :key="model.id" v-bind:model="model" @model-is-loading="modelIsLoading"
+        @model-is-loaded="modelIsLoaded" class="col-span-3"></Model>
     </div>
 
     <Spinner v-bind:showProp="showSpinner" />

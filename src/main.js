@@ -1,5 +1,6 @@
 import "./style.css";
-import HeaderComponent from "./components/HeaderComp.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
+import PathComponent from "./components/PathComponent.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
 import eruda from "eruda";
@@ -9,6 +10,7 @@ import { Plugin } from "vue-responsive-video-background-player";
 Vue.use(VueRouter);
 Vue.use(Plugin);
 Vue.component("HeaderComponent", HeaderComponent);
+Vue.component("PathComponent", PathComponent);
 window.eventBus = new Vue();
 
 const app = new Vue({
