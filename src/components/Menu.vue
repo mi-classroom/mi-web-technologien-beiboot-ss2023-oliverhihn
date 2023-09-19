@@ -3,18 +3,22 @@
     <HeaderComponent title="AR-Erlebnis starten" back-button-link="/" />
     <div class="menuecontent">
       <div class="menumenue">
-        <router-link class="menuebutton" id="button_startVR" :to="'/ar'">
-          <img src="assets/icons/ar.svg">
-          <h2>AR starten</h2>
-        </router-link>
         <div class="menuebutton" id="button_nearby" @click="enterToScene">
           <img src="assets/icons/radar.svg">
           <h2>ARlebnisse in der Umgebung anzeigen</h2>
         </div>
+        <router-link class="menuebutton" id="button_startVR" :to="'/ar'">
+          <img src="assets/icons/ar.svg">
+          <h2>AR starten</h2>
+        </router-link>
+        <router-link class="menuebutton" id="button_idk" :to="'/help'">
+          <img src="assets/icons/help.svg">
+          <h2>Ich hab keine Ahnung</h2>
+        </router-link>
       </div>
     </div>
   </div>
-</template>
+</div></template>
 
 <script>
 
@@ -49,6 +53,7 @@ export default {
 
 .menuecontent {
   position: relative;
+
 }
 
 .menumenue {
@@ -56,7 +61,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 20px;
   height: 93vh;
 }
 
@@ -89,6 +94,10 @@ export default {
 
 #button_startVR {
   background: var(--primary-color);
+}
+
+#button_idk {
+  background: var(--grey);
 }
 
 .pfad {
