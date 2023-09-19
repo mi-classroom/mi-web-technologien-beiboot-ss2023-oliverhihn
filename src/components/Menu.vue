@@ -12,13 +12,13 @@
           <h2>AR starten</h2>
         </router-link>
         <router-link class="menuebutton" id="button_idk" :to="'/help'">
-          <img src="assets/icons/help.svg">
+          <img src="assets/icons/help.svg" id="filter-black">
           <h2>Ich hab keine Ahnung</h2>
         </router-link>
       </div>
     </div>
   </div>
-</div></template>
+</template>
 
 <script>
 
@@ -86,6 +86,7 @@ export default {
   text-align: center;
   color: white;
   font-weight: normal;
+  font-size: 130%;
 }
 
 #button_nearby {
@@ -98,6 +99,14 @@ export default {
 
 #button_idk {
   background: var(--grey);
+}
+
+#button_idk h2 {
+  color: black;
+}
+
+#filter-black {
+  filter: brightness(0);
 }
 
 .pfad {
