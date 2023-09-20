@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <HeaderComponent title="ARlebnispfad wählen" back-button-link="/menu" />
-    <qrcode-stream @detect="onDetect"></qrcode-stream>
+    <qrcode-stream @detect="onDetect" v-if="!scanned"></qrcode-stream>
+    <vue-iframe v-if="scanned" :src=this.src allow="camera *; geolocation *; microphone *; autoplay *" frame-id="my-ifram"
+      @load="onLoad" name="my-frame" width="100vw" height="100vh" />
   </div>
 </template>
 
@@ -15,12 +17,19 @@ export default {
         lat: null,
         lon: null
       },
+      scanned: false,
+      src: "",
       wiehlLat: 50.949100,
       wiehlLon: 7.552020,
       marienheideLat: 51.083260,
       marienheideLon: 7.530500,
       wipperfuerthLat: 51.117142,
       wipperfuerthLon: 7.396330,
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.scanned = false;
     }
   },
   mounted() {
@@ -34,7 +43,8 @@ export default {
       const a = await detectedCodes;
       console.log(a);
       console.log(a.content);
-      window.location.href = a.content;
+      this.src = a.content;
+      this.scanned = true;
     },
     updatePosition() {
       navigator.geolocation.getCurrentPosition((result) => {
@@ -42,8 +52,8 @@ export default {
         this.location.lon = result.coords.longitude
       })
     },
-    returnTwo() {
-      return 2;
+    unscan() {
+      this.scanned = false;
     },
     calculateDistance(lat1, lng1, lat2, lng2) {
       const radius = 6371; // Earth's radius in km

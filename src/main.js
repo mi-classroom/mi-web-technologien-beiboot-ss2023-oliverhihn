@@ -8,7 +8,9 @@ import PointComponent from "./components/PointComponent.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import { Plugin } from "vue-responsive-video-background-player";
 import VueQrcodeReader from "vue-qrcode-reader";
+import VueIframe from "vue-iframes";
 
+Vue.use(VueIframe);
 Vue.use(VueRouter);
 Vue.use(Plugin);
 Vue.use(VueQrcodeReader);
