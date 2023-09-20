@@ -5,8 +5,9 @@ FROM node:20-alpine
 RUN npm install --global webpack-cli webpack ngrok
 
 WORKDIR /site
-ADD ./ /site
+COPY ./package*.json /site
 RUN npm install
+COPY ./ /site
 
 ARG AUTH_TOKEN
 ENV AUTH_TOKEN=${AUTH_TOKEN}

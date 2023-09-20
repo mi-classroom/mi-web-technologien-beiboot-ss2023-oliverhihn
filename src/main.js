@@ -1,15 +1,17 @@
 import "./style.css";
-import HeaderComponent from "./components/HeaderComponent.vue";
-import PathComponent from "./components/PathComponent.vue";
-import PointComponent from "./components/PointComponent.vue";
 import Vue from "vue";
+import router from "./router";
 import VueRouter from "vue-router";
 import eruda from "eruda";
-import router from "./router";
+import PathComponent from "./components/PathComponent.vue";
+import PointComponent from "./components/PointComponent.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
 import { Plugin } from "vue-responsive-video-background-player";
+import VueQrcodeReader from "vue-qrcode-reader";
 
 Vue.use(VueRouter);
 Vue.use(Plugin);
+Vue.use(VueQrcodeReader);
 Vue.component("HeaderComponent", HeaderComponent);
 Vue.component("PathComponent", PathComponent);
 Vue.component("PointComponent", PointComponent);

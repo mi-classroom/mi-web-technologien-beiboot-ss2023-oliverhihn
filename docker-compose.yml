@@ -4,4 +4,4 @@ services:
     build:
       context: .
       args:
-        - AUTH_TOKEN=2QVfwqQCRCRuSjcxU5KllSS413e_utzrc6ujKUZoDUNSaw1c
+        - AUTH_TOKEN=2VfHrXBEwFH8xpEEAiqHlS3cZwl_5SNgFodyd9r9n4nPTUNie

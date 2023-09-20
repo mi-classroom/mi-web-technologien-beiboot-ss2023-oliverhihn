@@ -3,6 +3,7 @@ import Home from "./components/Home.vue";
 import Wiehl from "./components/Wiehl.vue";
 import Menu from "./components/Menu.vue";
 import SceneHome from "./components/SceneHome.vue";
+import QRScanner from "./components/QRScanner.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
 
@@ -36,6 +37,11 @@ const router = new VueRouter({
       path: "/wiehl",
       name: "Wiehl",
       component: Wiehl,
+    },
+    {
+      path: "/qr",
+      name: "QRScanner",
+      component: QRScanner,
     },
   ],
 });

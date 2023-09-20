@@ -7,7 +7,11 @@
           <img src="assets/icons/radar.svg">
           <h2>ARlebnisse in der Umgebung anzeigen</h2>
         </router-link>
-        <div class="menuebutton" id="button_startVR" @click="enterToScene">
+        <!-- <div class="menuebutton" id="button_startVR" @click="enterToScene">
+          <img src="assets/icons/ar.svg">
+          <h2>AR starten</h2>
+        </div> -->
+        <div class="menuebutton" id="button_startVR" @click="openQRScanner">
           <img src="assets/icons/ar.svg">
           <h2>AR starten</h2>
         </div>
@@ -33,6 +37,9 @@ export default {
   methods: {
     enterToScene() {
       this.$router.push("/session");
+    },
+    openQRScanner() {
+      this.$router.push("/qr");
     },
   },
 }
