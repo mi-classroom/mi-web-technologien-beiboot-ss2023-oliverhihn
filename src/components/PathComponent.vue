@@ -1,6 +1,6 @@
 <template>
   <div class=" content" id="content">
-    <div class="option" @click="dolog">
+    <div class="option" @click="linkClicked">
       <div class="gradient">
         <img :src="`assets/images/${image}`" class="background">
       </div>
@@ -16,11 +16,13 @@ export default {
   },
   props: {
     title: String,
-    image: String
+    image: String,
+    buttonlink: String
   },
+
   methods: {
-    dolog() {
-      console.log('KLICKED')
+    linkClicked() {
+      this.$router.push(this.buttonlink);
     }
   }
 };

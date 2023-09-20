@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <HeaderComponent title="ARlebnispfad wählen" back-button-link="/" />
-    <PathComponent title="Wiehl" image="wiehl.jpg" back-button-link="/" />
-    <PathComponent title="Straße der Arbeit - Marienheide" image="wipperfuerth.webp" back-button-link="/" />
-    <PathComponent title="Wipperfürth" image="unnenbergturm.jpg" back-button-link="/" />
+    <PathComponent title="Wiehl" image="wiehl.jpg" buttonlink="/wiehl" />
+    <PathComponent title="Straße der Arbeit - Marienheide" image="wipperfuerth.webp" buttonlink="/wiehl" />
+    <PathComponent title="Wipperfürth" image="unnenbergturm.jpg" buttonlink="/wiehl" />
   </div>
 </template>
 
@@ -22,13 +22,16 @@ export default {
   mounted() {
     this.updatePosition()
   },
+  updated() {
+    this.updatePosition();
+  },
   methods: {
     updatePosition() {
       navigator.geolocation.getCurrentPosition((result) => {
         this.location.lat = result.coords.latitude
         this.location.lon = result.coords.longitude
       })
-    },
+    }
   }
 }
 </script>

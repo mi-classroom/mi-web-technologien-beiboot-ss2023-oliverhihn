@@ -3,7 +3,7 @@
     <HeaderComponent title="AR-Erlebnis starten" back-button-link="/" />
     <div class="menuecontent">
       <div class="menumenue">
-        <router-link class="menuebutton" id="button_nearby" :to="'/ar'">
+        <router-link class="menuebutton" id="button_nearby" :to="'/wiehl'">
           <img src="assets/icons/radar.svg">
           <h2>ARlebnisse in der Umgebung anzeigen</h2>
         </router-link>

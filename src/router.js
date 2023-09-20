@@ -1,5 +1,6 @@
 import Browse from "./components/Browse.vue";
 import Home from "./components/Home.vue";
+import Wiehl from "./components/Wiehl.vue";
 import Menu from "./components/Menu.vue";
 import SceneHome from "./components/SceneHome.vue";
 import Vue from "vue";
@@ -30,6 +31,11 @@ const router = new VueRouter({
       path: "/browse",
       name: "Browse",
       component: Browse,
+    },
+    {
+      path: "/wiehl",
+      name: "Wiehl",
+      component: Wiehl,
     },
   ],
 });

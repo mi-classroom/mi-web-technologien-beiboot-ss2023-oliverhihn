@@ -1,6 +1,7 @@
 import "./style.css";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import PathComponent from "./components/PathComponent.vue";
+import PointComponent from "./components/PointComponent.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
 import eruda from "eruda";
@@ -11,6 +12,7 @@ Vue.use(VueRouter);
 Vue.use(Plugin);
 Vue.component("HeaderComponent", HeaderComponent);
 Vue.component("PathComponent", PathComponent);
+Vue.component("PointComponent", PointComponent);
 window.eventBus = new Vue();
 
 const app = new Vue({
