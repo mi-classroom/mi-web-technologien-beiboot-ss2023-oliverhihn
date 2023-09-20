@@ -20,7 +20,7 @@
     <a href="https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2023-oliverhihn"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2023-oliverhihn">View Demo</a>
+    <a href="https://arlebnispfade.oliver-hihn.de">View Demo</a>
     ·
     <a href="https://github.com/mi-classroom/mi-web-technologien-beiboot-ss2023-oliverhihn/issues">Report Bug</a>
     ·
