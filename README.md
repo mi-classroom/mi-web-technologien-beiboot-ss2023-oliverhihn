@@ -90,11 +90,7 @@ Nach dem clonen des Branches `demoanwendung`:
 
 ### Installation
 
-1. Build
-   ```sh
-   docker compose build --no-cache
-   ```
-2. ngrok API anpassen in `docker-compose.yml`
+1. ngrok API anpassen in `docker-compose.yml`
    ```yaml
     services:
       arlebnispfade:
@@ -104,6 +100,12 @@ Nach dem clonen des Branches `demoanwendung`:
           args:
             - AUTH_TOKEN=<your-token>
    ```
+
+2. Build
+   ```sh
+   docker compose build --no-cache
+   ```
+   
 3. Deployment (local)
    ```bash
    docker compose up -d
