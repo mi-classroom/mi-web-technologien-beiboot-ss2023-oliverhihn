@@ -1,4 +1,4 @@
-# Debugging and Development Environment
+# Debugging and Development Environment 🐛
 
 Debugging is important for efficient development. Therefore we need to decide on a method that suits our needs.
 
