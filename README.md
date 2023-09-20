@@ -130,6 +130,41 @@ Nach dem deployment wird in dem Terminal-Fenster die jeweilige ngrok-URL ausgege
 </p>
 </div>
 
+Durch das Scannen der unten stehenden QR-Codes werden die Verschiedenen Anwendungen geladen.
+
+<div align="center">
+<figure>
+  <img src="images/qr/connect_markers_with_cylindar.png" alt="connect_markers_with_cylindar" width="400" />
+  <figcaption> connect markers with cylindar </figcaption>
+</figure>
+<br><br><br>
+  <figure>
+  <img src="images/qr/image_tracking.png" width="400" />
+  <figcaption> image tracking </figcaption>
+  </figure>
+  <br>  <br>  <br>
+  <figure>
+  <img src="images/qr/location_based_with_audio.png" width="400" />
+  <figcaption> location based with audio </figcaption>
+  </figure>
+  <br>  <br>  <br>
+  <figure>
+  <img src="images/qr/location_based.png" width="400" />
+  <figcaption> location based </figcaption>
+  </figure>
+  <br>  <br>  <br>
+  <figure>
+  <img src="images/qr/marker_based_with_audio.png" width="400" />
+  <figcaption> marker based with audio </figcaption>
+  </figure>
+  <br>  <br>  <br>
+  <figure>
+  <img src="images/qr/simple_objects.png" width="400" />
+  <figcaption> simple objects </figcaption>
+  </figure>
+  <br>  <br>  <br>
+</div>
+
 <p align="right">(<a href="#readme-top">zurück zum Anfang</a>)</p>
 
 <!-- LICENSE -->
