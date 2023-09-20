@@ -3,7 +3,7 @@
     <HeaderComponent title="ARlebnispfad wählen" back-button-link="/menu" />
     <qrcode-stream @detect="onDetect" v-if="!scanned"></qrcode-stream>
     <vue-iframe v-if="scanned" :src=this.src
-      allow="xr-spatial-tracking; camera *; geolocation *; microphone *; autoplay *" frame-id="my-ifram" @load="onLoad"
+      allow="xr; xr-spatial-tracking; camera *; geolocation *; microphone *; autoplay *" frame-id="my-ifram"
       name="my-frame" width="100vw" height="100vh" />
   </div>
 </template>
